@@ -1,6 +1,21 @@
 const ManageReservationCard = ({status, user}) => {
+    let cardHeaderColor;
+    switch (status) {
+        case 'Seated':
+          cardHeaderColor = 'bg-success'; // Green
+          break;
+        case 'Upcoming':
+          cardHeaderColor = 'bg-warning'; // Yellow
+          break;
+        case 'Waitlist':
+          cardHeaderColor = 'bg-danger'; // Red
+          break;
+        default:
+          cardHeaderColor = ''; // Default color
+      }
     return(
-        <div class="card">
+
+        <div class={`card ${cardHeaderColor}`}>
                     <h5 class="card-header">{status}</h5>
                     <a class="icon-link icon-link-hover" href="/restaurant/page" style={{ color: 'rgb(33, 37, 41)', textDecoration: 'none', width: '20'}}>
                         <div class="card-body card-hover">

@@ -10,7 +10,7 @@ const UpdateProfilePage = ({user, setUser}) => {
     const [email, setEmail] = useState(user.email);
 
     const updateProfile = async () => {
-        axios.patch(`http://localhost:5000/api/users/${user._id}`, JSON.stringify({ firstName, lastName, email }), { headers: {'Content-Type': 'application/json'} })
+        axios.patch(`http://localhost:5001/api/users/${user._id}`, JSON.stringify({ firstName, lastName, email }), { headers: {'Content-Type': 'application/json'} })
         .then(response => {
             console.log("User updated. New user: ", response.data)
             setUser(response.data)

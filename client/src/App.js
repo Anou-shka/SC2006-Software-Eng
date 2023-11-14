@@ -6,10 +6,12 @@ import ContactUs from "./components/ContactUs";
 import RegisterForm from "./views/RegisterPage";
 import ForgetPassword from "./components/ForgetPassword";
 import RestaurantPage from "./views/RestaurantPage";
+import ManageReservationPage from "./views/ManageReservationPage";
 import ManageRestaurantPage from "./views/ManageRestaurantPage";
 import ReservationPage from "./views/ReservationPage";
 import FavouriteRestaurantPage from "./views/FavouriteRestaurantPage";
 import ManageReservationCard from "./components/ManageReservationCard";
+import UpdateRestaurantProfilePage from "./views/UpdateRestaurantProfilePage";
 import TAndC from "./components/TAndC";
 import HomePage from "./views/HomePage";
 import ProfilePage from "./views/ProfilePage";
@@ -73,8 +75,11 @@ function App() {
                 {/* Pages for Restaurant Owner Only */}
                 { isAuthenticated && user.role.toLowerCase()==="restaurateur" && (
                   <>
+                      <Route path="/restaurant/profile" element={<UpdateRestaurantProfilePage user={user}/>} />
                       <Route path="/restaurant/manage" element={<ManageRestaurantPage/>}/>
+                      <Route path="/reservation/manage" element={<ManageReservationPage/>}/>
                       <Route path="/managereservationcard" element={<ManageReservationCard/>}/>
+                      <Route path="/restaurant/manage" element={<ManageRestaurantPage/>}/>
                   </>
                 )}
 
