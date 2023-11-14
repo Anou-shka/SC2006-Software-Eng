@@ -39,7 +39,7 @@ const Navbar = ({ role, name, setIsAuthenticated, setUser }) => {
                         { role.toLowerCase() === "restaurateur" && (
                             <>
                                 <NavLink to="/restaurant/manage" className="nav-item nav-link">Manage Restaurant</NavLink>
-                                <NavLink to="/reservations" className="nav-item nav-link">Manage Reservations</NavLink>
+                                <NavLink to="/reservation/manage" className="nav-item nav-link">Manage Reservations</NavLink>
                             </>
                         )}
                         

@@ -1,60 +1,73 @@
-import SearchBar from '../components/SearchBar';
-import { useState } from "react"
-import ManageReservationCard from '../components/ManageReservationCard';
+import { NavLink } from "react-router-dom";
 
 const ManageRestaurantPage = () => {
-    const [isSeatedClicked, setIsSeatedClicked] = useState(false);
-    const [isUpcomingClicked, setIsUpcomingClicked] = useState(false);
-    const [isWaitlistedClicked, setIsWaitlistedClicked] = useState(false);
-
-    const handleButtonClick = (buttonType) => {
-        switch (buttonType) {
-            case 'seated':
-                setIsSeatedClicked(!isSeatedClicked);
-                break;
-            case 'upcoming':
-                setIsUpcomingClicked(!isUpcomingClicked);
-                break;
-            case 'reservationTime':
-                setIsWaitlistedClicked(!isWaitlistedClicked);
-                break;
-            default:
-                break;
-        }
-    };
-
+    // if (!restaurant) {
+    //     // Handle the case when 'restaurant' is undefined
+    //     return <p>Loading...</p>; // or any other appropriate action
+    //   }
     return(
         <>
-            <div class="container mt-3 mb-5" style={{alignItems: 'center'}}>
-                    <SearchBar placeholder="Search"/>
-                    <div class="row g-0 mt-3" style={{justifyContent: 'center'}}>
-                    <div class="col-2" style={{paddingLeft: '3px'}}>
-                        <button type="button" class={`btn ${isSeatedClicked ? 'btn-active' : ''}`} data-bs-toggle="button" 
-                        style={{width: '95%', padding: '10px', borderColor: isSeatedClicked ? 'grey' : '#DEE2E6', borderRadius: '10px'}} 
-                        onClick={() => handleButtonClick('seated')}>Seated</button>
-                    </div>
-                    <div class="col-2">
-                        <button type="button" class={`btn ${isUpcomingClicked ? 'btn-active' : ''}`} data-bs-toggle="button" 
-                        style={{width: '95%', padding: '10px', borderColor: isUpcomingClicked ? 'grey' : '#DEE2E6', borderRadius: '10px'}} 
-                        onClick={() => handleButtonClick('upcoming')}>Upcoming</button>
-                    </div>
-                    <div class="col-2">
-                        <button type="button" class={`btn ${isWaitlistedClicked ? 'btn-active' : ''}`} data-bs-toggle="button" 
-                        style={{width: '95%', padding: '10px', borderColor: isWaitlistedClicked ? 'grey' : '#DEE2E6', borderRadius: '10px'}} 
-                        onClick={() => handleButtonClick('waitlisted')}>Waitlist</button>
-                    </div>
+    <div className="container w-50 my-3">
+        <h2 className="mb-4">Restaurant Details</h2>
+        <div className="card bg-light py-4 px-5 mb-3">
+            <div className="profile-row d-flex">
+                <div className="col-4">
+                    Restaurant Name
+                </div>
+                <div className="col-6 ps-3">
+                    {/* {restaurant.name} */}
+                    Dian Xiao Er
                 </div>
             </div>
-            <div class="container mt-3 mb-4" style={{alignItems: 'center'}}>
-                <ManageReservationCard status="Seated" user="Gary Jordan"/>
-                <br/>
-                <ManageReservationCard status="Upcoming" user="Gary Gay"/>
-                <br/>
-                <ManageReservationCard status="Waitlist" user="Iam Bored"/>
+            <div className="profile-row d-flex">
+                <div className="col-4">
+                    Description
+                </div>
+                <div className="col-6 ps-3">
+                    {/* {restaurant.description} */}
+                    Chinese Restaurant
+                </div>
             </div>
-            
-            
-        </>
+            <div className="profile-row d-flex">
+                <div className="col-4">
+                    Address
+                </div>
+                <div className="col-6 ps-3">
+                    {/* {restaurant.address} */}
+                    1 Jurong West Central 2
+                </div>
+            </div>
+            <div className="profile-row d-flex">
+                <div className="col-4">
+                    Email
+                </div>
+                <div className="col-6 ps-3">
+                    {/* {restaurant.email} */}
+                    dianxiaoer@example.com
+                </div>
+            </div>
+            <div className="profile-row d-flex">
+                <div className="col-4">
+                    Contact Number
+                </div>
+                <div className="col-6 ps-3">
+                    {/* {restaurant.contactNumber} */}
+                    6265 4428
+                </div>
+            </div>
+            <div className="profile-row d-flex">
+                <div className="col-4">
+                    Timings
+                </div>
+                <div className="col-6 ps-3">
+                    {/* {restaurant.timings} */}
+                    10am - 10pm
+                </div>
+            </div>
+        </div>
+        <NavLink className="btn btn-primary" to="../restaurant/profile">Update</NavLink>
+    </div>
+    </>
     )
 }
 
