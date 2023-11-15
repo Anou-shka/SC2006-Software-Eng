@@ -15,8 +15,8 @@ const ManageReservationCard = ({status, user}) => {
       }
     return(
 
-        <div class={`card ${cardHeaderColor}`}>
-                    <h5 class="card-header">{status}</h5>
+        <div class="card">
+                    <h5 class={`card ${cardHeaderColor}`} style={{height: '4vh', borderRadius: '5', paddingLeft: '7px'}}>{status}</h5>
                     <a class="icon-link icon-link-hover" href="/restaurant/page" style={{ color: 'rgb(33, 37, 41)', textDecoration: 'none', width: '20'}}>
                         <div class="card-body card-hover">
                             <div class="row">

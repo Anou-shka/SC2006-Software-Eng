@@ -75,8 +75,7 @@ function App() {
                 {/* Pages for Restaurant Owner Only */}
                 { isAuthenticated && user.role.toLowerCase()==="restaurateur" && (
                   <>
-                      <Route path="/restaurant/profile" element={<UpdateRestaurantProfilePage user={user}/>} />
-                      <Route path="/restaurant/manage" element={<ManageRestaurantPage/>}/>
+                      <Route path="/restaurant/profile" element={<UpdateRestaurantProfilePage user={user}/>} /> <Route path="/restaurant/manage" element={<ManageRestaurantPage/>}/>
                       <Route path="/reservation/manage" element={<ManageReservationPage/>}/>
                       <Route path="/managereservationcard" element={<ManageReservationCard/>}/>
                       <Route path="/restaurant/manage" element={<ManageRestaurantPage/>}/>

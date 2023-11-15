@@ -10,7 +10,6 @@ const Footer = ({ role, setIsAuthenticated, setUser }) => {
                         <a className="d-block link-underline link-underline-opacity-0 text-white-50 ps-0" href="/#">Rewards</a>
                         <a className="d-block link-underline link-underline-opacity-0 text-white-50 ps-0" href="/#">Deals</a>
                         <a className="d-block link-underline link-underline-opacity-0 text-white-50 ps-0" href="/#">Restaurant near me</a>
-                        <a className="d-block link-underline link-underline-opacity-0 text-white-50 ps-0" href="/managereservationcard">Trying something</a>
 
                 </div>
                 <div className="col-lg-3">

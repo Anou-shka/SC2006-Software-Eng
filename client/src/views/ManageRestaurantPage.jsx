@@ -65,7 +65,7 @@ const ManageRestaurantPage = () => {
                 </div>
             </div>
         </div>
-        <NavLink className="btn btn-primary" to="../restaurant/profile">Update</NavLink>
+        <NavLink className="btn btn-primary" to="/restaurant/profile">Update</NavLink>
     </div>
     </>
     )
